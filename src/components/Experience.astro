@@ -1,0 +1,36 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "Actualmente...",
+    title: "Trabajando como Freelancer",
+    description:
+      "Me encuentro desarrolando sistemas para empresas locales utilizando teconoligias como Laravel y React.",
+  },
+  {
+    date: "Julio 2022 - Marzo 2023",
+    title: "Do Think",
+    description:
+      "Realice trabajo como desarrollador Front End trabajando con JS vanilla y SalesForce",
+  },
+  {
+    date: "Junio 2021 - Junio 2022",
+    title: "OmbuTech.",
+    description:
+      `Trabaje en como fullStack en todo tipo de tareas, aluguno de los sistemas que realice fueron: 
+      Red Acero (Sistema de compras de artículos del hogar). 
+      Implementación de apis para todo tipo de sistemas. Mecha sistema para Equality asociada con Rebrit S. R. L.
+      Adicionalmente trabaje como staffing para Quiena inversiones en backend control y manejo de datos sensibles`,
+  },
+]
+---
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4 hover:rounded-lg">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
+

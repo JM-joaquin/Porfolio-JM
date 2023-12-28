@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Linkedin from '../../public/icons/Linkedin.astro';
+import GitHub from '../../public/icons/GitHub.astro';
+import Mail from '../../public/icons/Mail.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Projects from '../components/Projects.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Porfolio de Joaquín - Desarrollador y Programador Web.">
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-34">
+			<h1 class="lg:pb-10 text-normal text-bubble text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-center flex-row pb-4">Hey, soy Joaquin
+				<div class="flex items-center gap-x-4 pl-4"> <a class="flex items-center" href="https://www.linkedin.com/in/joaqu%C3%ADn-monz%C3%B3n-150b1a2a6/" target="_blank" rel="noopener"><Badge>Disponible!</Badge></a> 				
+					<img 
+						src="../../public/foto.png" 
+						alt="joaquin photo"
+						class="rounded-full size-16"
+					/>
+				</div>
+			</h1>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">Hola, soy Joaquín. <span class="text-red-300/80">Desarrollador Front End</span>, actualmente me encuentro trabajando con tecnologías como <span class="text-blue-300/90">React</span>, <span class="font-bold">Next</span> y librerías de CSS, así como metodologías ágiles como Scrum. También he trabajado como backend, principalmente con <span class="text-green-300/80">Python</span>, <span class="text-violet-300/80">PHP</span> y <span class="text-yellow-300/80">Node</span></h2>
+			<nav class="flex gap-2 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/joaqu%C3%ADn-monz%C3%B3n-150b1a2a6/">
+					<Linkedin class="size-4 md:size-6"/>	
+					Linkedin	
+				</SocialPill>
+				<SocialPill href="https://github.com/JM-joaquin">
+					<GitHub class="size-4 md:size-6"/>	
+					Github	
+				</SocialPill>
+				<SocialPill href="mailto:joaquinbmonzon@gmail.com">
+					<Mail class="size-4 md:size-6"/>
+					joaquinbmonzon@gmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+		
+		<SectionContainer id="Experiencia">
+			<h2 class="text-2xl font-semibold mb-10">Experiencia laboral</h2>
+			<Experience/>
+		</SectionContainer>
+		<SectionContainer id="Proyectos">
+			<h2 class="text-2xl font-semibold mb-10">Proyectos</h2>
+			<Projects/>
+		</SectionContainer>
+		<Footer></Footer>
+	</main>
+
+<style>
+	/* Estilos para el texto normal */
+	.text-normal {
+		transition: color 1.2s, transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	}
+
+	/* Aplicar la animación y estilos al pasar el ratón sobre el elemento h1 */
+	.text-bubble:hover {
+		color: violet;
+		transform: scale(1.2);
+	}
+
+	@media (max-width: 450px){
+			/* Estilos para el texto normal */
+	.text-normal {
+		transition: none;
+	}
+
+	/* Aplicar la animación y estilos al pasar el ratón sobre el elemento h1 */
+	.text-bubble:hover {
+		transform: scale(1);
+	}
+	}
+		
+</style>
+</Layout>
