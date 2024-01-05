@@ -9,6 +9,7 @@ import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Projects from '../components/Projects.astro';
 import Footer from '../components/Footer.astro';
+import Skills from '../components/Skills.astro';
 ---
 
 <Layout title="Porfolio de Joaquín - Desarrollador y Programador Web.">
@@ -17,7 +18,7 @@ import Footer from '../components/Footer.astro';
 			<h1 class="lg:pb-10 text-normal text-bubble text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-center flex-row pb-4">Hey, soy Joaquín
 				<div class="flex items-center gap-x-4 pl-4"> <a class="flex items-center" href="https://www.linkedin.com/in/joaqu%C3%ADn-monz%C3%B3n-150b1a2a6/" target="_blank" rel="noopener"><Badge>Disponible!</Badge></a> 				
 					<img 
-						src="../../public/imgs/foto.png" 
+						src="/foto.png" 
 						alt="joaquin photo"
 						class="rounded-full size-16"
 					/>
@@ -43,6 +44,10 @@ import Footer from '../components/Footer.astro';
 		<SectionContainer id="Experiencia">
 			<h2 class="text-2xl font-semibold mb-10">Experiencia laboral</h2>
 			<Experience/>
+		</SectionContainer>
+		<SectionContainer id="Habilidades">
+			<h2 class="text-2xl font-semibold mb-10">Habilidades</h2>
+			<Skills></Skills>
 		</SectionContainer>
 		<SectionContainer id="Proyectos">
 			<h2 class="text-2xl font-semibold mb-10">Proyectos</h2>

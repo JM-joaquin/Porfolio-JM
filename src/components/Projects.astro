@@ -1,53 +1,85 @@
 ---
 const PROJECTS = [
-    {
-        title: 'Gifos!',
-        description: 'Es un proyecto realizado con React que consume la api de Giphy',
-        github: 'https://github.com/JoaquinB-M/Gifos',
-        image: '../../public/imgs/gifs.png',
-        tags: ['React, Css, API']
-    },
-    {
-        title: 'Rick and Morty Api',
-        description: 'Es un proyecto de Flask para consumir una api de Rick and Morty',
-        github: 'https://github.com/JM-joaquin/apiFlaskRickAndMorty',
-        image: '../../public/imgs/rickMorty.png',
-        tags: ['JS, Python, API']
-    },
-    {
-        title: 'Banco Saint Patrick',
-        description: 'Creación de un sitio web integral con enfoque en Frontend React, Backend Node, Bases de datos.',
-        github: 'https://github.com/BrayanGalindez/IDEAS',
-        image: '../../public/imgs/banco.png',
-        tags: ['React, Tailwind, Node']
-    },
-    {
-        title: 'Galeria Py!',
-        description: 'Simple lista de tareas con el propósito de conocer y profundizar más en los fundamentos de Flask, con una base de datos con mySql',
-        github: 'https://github.com/JM-joaquin/appFlaskGallery',
-        image: '../../public/imgs/galeria.png',
-        tags: ['JS, Python, MySql']
-    }
-]
+  {
+    title: "Gifos!",
+    description:
+      "Es un proyecto realizado con React que consume la api de Giphy",
+    github: "https://github.com/JoaquinB-M/Gifos",
+    image: "/gifs.png",
+    tags: ["React, Css, API"],
+    demo: "https://gifos-jm.netlify.app/"
+  },
+  {
+    title: "Rick and Morty Api",
+    description:
+      "Es un proyecto de Flask para consumir una api de Rick and Morty",
+    github: "https://github.com/JM-joaquin/apiFlaskRickAndMorty",
+    image: "/rickMorty.png",
+    tags: ["JS, Python, API"],
+    demo: ""
+  },
+  {
+    title: "Banco Saint Patrick",
+    description:
+      "Creación de un sitio web integral con enfoque en Frontend React, Backend Node, Bases de datos.",
+    github: "https://github.com/BrayanGalindez/IDEAS",
+    image: "/banco.png",
+    tags: ["React, Tailwind, Node"],
+    demo: "https://bancosaintpatrick.netlify.app/"
+  },
+  {
+    title: "Galeria Py!",
+    description:
+      "Simple lista de tareas con el propósito de conocer y profundizar más en los fundamentos de Flask, con una base de datos con mySql",
+    github: "https://github.com/JM-joaquin/appFlaskGallery",
+    image: "/galeria.png",
+    tags: ["JS, Python, MySql"],
+    demo: ""
+  },
+];
 ---
 
 {
-    PROJECTS.map(({ image, title, description, tags, github }) => (
-        <article class="pb-4">
-        <h3 class="cursor-pointer text-2xl font-semibold text-blue-500 mb-2 hover:text-blue-900"><a target="_blank" href={github}>{title}</a></h3>
-        <p class="text-lg mb-4 text-pretty">{description}</p>
-        <ul class="flex gap-x-2 flex-row mb-2">
-            {tags.map((tag) => (
-            <li>{tag}</li>
-            ))}
-        </ul>
+  PROJECTS.map(({ image, title, description, tags, github, demo }) => (
+    <article class="pb-4">
+      <h3 class="text-2xl font-semibold text-blue-500 mb-2">
+          {title}
+      </h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>{tag}</li>
+        ))}
+      </ul>
+      <div class="relative cursor-pointer ">
         <img
-            loading="lazy"
-            class="rounded opacity-80 transition hover:opacity-100 shadow-2xl shadow-white/10 aspect-video"
-            src={image}
-            alt={`Captura de pantalla del proyecto ${image}`}
+          loading="lazy"
+          class="rounded opacity-80 transition hover:opacity-100 shadow-2xl shadow-white/10 aspect-video"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${image}`}
         />
-        </article>
-    ))
+        <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center opacity-0 transition hover:opacity-100 bg-black/60 rounded">
+          <div class="text-white text-center">
+            <a
+              class="text-blue-300 hover:text-blue-500 px-2 py-1 mx-1"
+              target="_blank"
+              href={github}
+            >
+              GitHub
+            </a>
+            {
+            demo &&
+                <a
+                  class="text-blue-300 hover:text-blue-500 px-2 py-1 mx-1"
+                  target="_blank"
+                  href={demo}
+                >
+                  Demo
+                </a>
+            }
+          </div>
+        </div>
+      </div>
+    </article>
+  ))
 }
-
